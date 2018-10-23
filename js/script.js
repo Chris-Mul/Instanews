@@ -70,12 +70,13 @@ $(function () {
                       let artUrl = currentResult.url;
                       let imgUrl = currentResult.multimedia[4].url;
                       $('.articles').append(`
-                          <div>
+                          <div class="articleContainer">
                               <a href="${artUrl}">
-                                  <img src="${imgUrl}">
+                                
                                   <p>${abstract}</p>
                               </a>
                           </div>`);
+                          $('.articleContainer').last().css("background-image", 'url('+ imgUrl +')');
                   }
               }
           }).fail(function (err) {

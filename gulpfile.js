@@ -143,7 +143,29 @@ gulp.task(
       .pipe(gulp.dest('./build/js'));
   })
 );
+gulp.task("html", function (done) {
+  gulp
+      .src("./*.html")
+      .pipe(prettyError())
+      .pipe(gulp.dest("./build"))
+      .on("end", done);
+});
 
+gulp.task("images", function (done) {
+  gulp
+      .src("./assets/images/*")
+      .pipe(prettyError())
+      .pipe(gulp.dest("./build/images"))
+      .on("end", done);
+});
+
+gulp.task("fonts", function (done) {
+  gulp
+      .src("./assets/fonts/*")
+      .pipe(prettyError())
+      .pipe(gulp.dest("./build/fonts"))
+      .on("end", done);
+});
 // Set-up BrowserSync and watch
 
 gulp.task('browser-sync', function() {
@@ -154,13 +176,17 @@ gulp.task('browser-sync', function() {
   });
 
   gulp
-    .watch(['build/css/*.css', 'build/js/*.js'])
+    .watch(['build/index.html','build/css/*.css', 'build/js/*.js', 'build/images/*','build/fonts/*'])
     .on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {
   gulp.watch('js/*.js', gulp.series('scripts'));
   gulp.watch('sass/*.scss', gulp.series('sass'));
+  gulp.watch('*.html', gulp.series('html'));
+  gulp.watch('./assets/images/*', gulp.series('images'));
+  gulp.watch('./assets/fonts/*', gulp.series('fonts'));
 });
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch'));
+gulp.task("build", gulp.parallel("html", "scripts", "sass", "images", "fonts"));
+gulp.task('default', gulp.series('build', gulp.parallel('browser-sync', 'watch')));

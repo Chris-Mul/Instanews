@@ -3,7 +3,11 @@ body {
     font-size:16px;
     color: #ffffff;
     background-color:black;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    line-height: 1em;
 }
+    
 
 .container {
     display: flex;
@@ -17,6 +21,8 @@ body {
     }
     p{
         padding: 1em;
+    
+        
     }
    
     .drop-down {
@@ -28,24 +34,42 @@ body {
 
     footer {
         justify-self: flex-end;
+        padding:1em
     }
+
+    select:focus{
+        outline:none;
+
+    }
+
 }
 
 .container.loaded {
+
     header {
         flex: 0 1;
         padding: 30px;  
         }
-    .articles {
-        img{
 
-        }  
-  
+
+    .articleContainer{
+        background-size: cover;
+        width:100%;
+        height:300px;
+        display: flex;
+        align-items: flex-end;
+
         p{
-            color:white
-            
+            color:white; 
+            line-height: 1.5em;
+            background-color: rgba(0,0,0,0.6);  
         }
 
+        a{
+            text-decoration: none;
+        }
     }
-}
+  
+    
 
+}
