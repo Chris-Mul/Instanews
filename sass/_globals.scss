@@ -119,6 +119,10 @@ body {
             background-color: rgba(0,0,0,0.6);  
             width:100%;
             padding:0;
+            
+            @include tablet{
+                height: 20vh;
+            }
 
             @include desktop{
             position: absolute;

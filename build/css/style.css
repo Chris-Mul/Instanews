@@ -175,6 +175,9 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     padding: 0; }
+    @media (min-width: 600px) {
+      .container.loaded .articleContainer p {
+        height: 20vh; } }
     @media (min-width: 1240px) {
       .container.loaded .articleContainer p {
         position: absolute;
