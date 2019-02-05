@@ -1,13 +1,14 @@
+@import "variables";
 
 body {
-    font-size:16px;
+    font-size: $font-size;
     color: #ffffff;
-    background-color:black;
+    background-color: black;
     font-family: 'Open Sans';
     font-weight: 300;
     line-height: 1em;
 }
-    
+
 
 .container {
     display: flex;
@@ -26,39 +27,40 @@ body {
         flex: 1;
         padding: 8em;
 
-        @include tablet{
+        @include tablet {
 
-            display:flex;
+            display: flex;
         }
-    
+
     }
-    p{
+
+    p {
         padding: 1em;
-        
+
     }
-   
+
     .drop-down {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        @include tablet{
-        
-        width: 160px;
-        padding-top: 100px;
+        @include tablet {
+
+            width: 160px;
+            padding-top: 100px;
         }
-      
-        
+
+
     }
 
     footer {
         justify-self: flex-end;
-        padding:1em;
-        color:#c2c2c2;
+        padding: 1em;
+        color: #c2c2c2;
     }
 
-    select:focus{
-        outline:none;
+    select:focus {
+        outline: none;
 
     }
 
@@ -66,81 +68,81 @@ body {
 
 .container.loaded {
 
-    .articles{
-    width:100%;
+    .articles {
+        width: 100%;
     }
 
     header {
         flex: 0 1;
-        padding: 30px;  
-        }
+        padding: 30px;
+    }
 
 
-        .articleContainer{
+    .articleContainer {
         background-size: cover;
-        width:100%;
-        height:300px;
+        width: 100%;
+        height: 300px;
         display: inline-flex;
         align-items: flex-end;
         position: relative;
         overflow: hidden;
-        
-        &:hover p{
-        bottom: 0;
+
+        &:hover p {
+            bottom: 0;
         }
 
-        
 
-        
-    
-        
 
-       
-        
 
-        @include tablet{
+
+
+
+
+
+
+        @include tablet {
             width: 33.3%;
         }
-        @include desktop{
+
+        @include desktop {
             width: 25%;
         }
 
-        a{
+        a {
             text-decoration: none;
             width: 100%;
             position: relative;
 
-           
+
         }
 
-        p{
-            color:white; 
+        p {
+            color: white;
             line-height: 1.5em;
-            background-color: rgba(0,0,0,0.6);  
-            width:100%;
-            padding:0;
-            
-            @include tablet{
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            padding: 0;
+
+            @include tablet {
                 height: 20vh;
             }
 
-            @include desktop{
-            position: absolute;
-            height:145px;
-            bottom:-140px;
-            transition:all .5s ease-in-out;
+            @include desktop {
+                position: absolute;
+                height: 145px;
+                bottom: -140px;
+                transition: all .5s ease-in-out;
             }
-            
-            
+
+
         }
 
-        
-       
-       
+
+
+
     }
-  
-    
-    
+
+
+
 
 }
-
